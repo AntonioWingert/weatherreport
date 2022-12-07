@@ -40,15 +40,20 @@ export const ButtonContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  margin-top: 4rem;
+  height: 17vh;
 `;
 
 export const TemperatureContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   
   h1 {
     color: ${({theme}) => theme.primary};
     font-size: 9rem;
+    font-weight: 500;
   }
 
   span {
@@ -73,5 +78,6 @@ export const DateContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 600;
   }
 `;
