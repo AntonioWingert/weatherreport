@@ -13,6 +13,11 @@ export const Container = styled.div`
     background: none;
     border: none;
     color: ${({theme}) => theme.primary};
+
+    > a {
+      text-decoration: none;
+      color: ${({theme}) => theme.primary};
+    }
   }
   
   > select {

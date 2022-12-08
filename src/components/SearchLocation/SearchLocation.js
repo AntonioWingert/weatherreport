@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { Container, SearchContainer } from './style';
 import {AiOutlineSearch, AiOutlineClose} from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 class SearchLocation extends Component {
   render() {
     return (
       <Container>
         <button type='button'>
-        <AiOutlineClose size={35}/>
+        <Link to="/">
+          <AiOutlineClose size={35}/>
+        </Link>
         </button>
         <SearchContainer>
           <div>

@@ -29,6 +29,11 @@ export const ButtonContainer = styled.div`
     outline: none;
   }
 
+  a {
+    text-decoration: none;
+    color: ${({theme}) => theme.primary};
+  }
+
   .target-button {
     display: flex;
     align-items: center;
@@ -41,6 +46,11 @@ export const ButtonContainer = styled.div`
 
 export const ImageContainer = styled.div`
   height: 17vh;
+
+  > img {
+    height: 12.625rem;
+    width: 14.625rem;
+  }
 `;
 
 export const TemperatureContainer = styled.div`

@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { weatherApiReducer } from "./weatherApiReducer";
 
 const rootReducer = combineReducers({
-  weatherApiReducer,
+  datesApi: weatherApiReducer,
 });
 
 export default rootReducer;

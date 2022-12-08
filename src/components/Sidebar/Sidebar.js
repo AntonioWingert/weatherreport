@@ -1,18 +1,12 @@
-import React, { Component } from 'react'
-import SearchLocation from '../SearchLocation/SearchLocation';
-import WeatherSideBar from '../WeatherSideBar/WeatherSideBar';
+import React from 'react'
 import { Container } from './style';
 
-class Sidebar extends Component {
-  render() {
-    const clickedButton = false;
+function Sidebar ({children}) {
+return (
+  <Container>
+    {children}
+  </Container>
+)};
 
-    return (
-      <Container>
-        {clickedButton ? <SearchLocation /> : <WeatherSideBar />}
-      </Container>
-    )
-  }
-}
 
 export default Sidebar;

@@ -1,11 +1,25 @@
-import Display from "./layout/Display";
+import Home from "./pages/Home";
+import Search from './pages/Search'
+import {Route, Switch} from 'react-router-dom';
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import { firstRequest } from "./store/actions";
 
-function App() {
+function App({dispatch, isLoading}) {
+  useEffect(()=> {
+    dispatch(firstRequest())
+  })
+
   return (
-    <div>
-     <Display />
-    </div>
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/search">
+        <Search />
+      </Route>
+    </Switch>
   );
 }
 
-export default App;
+export default connect()(App);
