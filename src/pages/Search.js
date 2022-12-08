@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
+import MainContent from '../components/MainContent';
 import SearchLocation from '../components/SearchLocation/SearchLocation';
 import Sidebar from '../components/Sidebar/Sidebar';
+import { MainContainer } from '../styles/MainContainer';
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <MainContainer>
         <Sidebar>
           <SearchLocation />
         </Sidebar>
-      </div>
+        <MainContent />
+      </MainContainer>
     )
   }
 }

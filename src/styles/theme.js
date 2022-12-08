@@ -8,6 +8,7 @@ const theme = {
   white: "#FFFFFF",
   bgPrimary: "#100E1D",
   celsius: "#110E3C",
+  fahrenheit: "#585676",
   bgSearch: "#3C47E9",
   bgIconF: "#585676",
   bgButton: "#6E707A",
