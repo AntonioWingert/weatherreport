@@ -7,6 +7,14 @@ export const Container = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  color: ${({theme}) => theme.secondary};
+
+
+  a {
+    text-decoration: none;
+    color: ${({theme}) => theme.secondary};
+    font-weight: 700;
+  }
 `;
 
 export const ContainerLoader = styled.div`
@@ -66,7 +74,7 @@ export const ItemsHighlights = styled.div`
   height: 500px;
   gap: 1rem;
 
-  h1 {
+  > h1 {
     align-self: flex-start;
     font-weight: 700;
     font-size: 24px;
@@ -80,5 +88,5 @@ export const HihgligthsContainer = styled.div`
   gap: 2rem;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 `;

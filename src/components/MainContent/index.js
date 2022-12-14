@@ -64,7 +64,9 @@ class MainContent extends Component {
             />
           </HihgligthsContainer>
         </ItemsHighlights>
-        <div>d</div>
+        <footer>
+          <p>Created by <a href="https://github.com/antonioWingert" target="_blank" rel="noreferrer">Antonio Bruno Wingert</a> - devChallenges.io</p>
+        </footer>
       </Container>
     )
   }

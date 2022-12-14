@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 import { firstRequest } from "./store/actions";
 
-function App({dispatch, isLoading}) {
+function App({dispatch}) {
   useEffect(()=> {
     dispatch(firstRequest())
   })

@@ -8,7 +8,7 @@ export const firstRequest = () => {
   return async (dispatch) => {
     dispatch(requestStarted());
     try {
-      const data = await getDatesApi('Santo Antonio do Sudoeste');
+      const data = await getDatesApi('santo antonio do sudoeste');
       return dispatch(requestSuccessful(data));
     } catch (error) {
       return dispatch(requestFailed(error));
