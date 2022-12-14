@@ -32,11 +32,16 @@ export const Container = styled.div`
     outline: none;
   }
 
-  p {
+  a {
     cursor: pointer;
     color: ${({theme}) => theme.primary};
     font-size: 1rem;
-    font-weight: 500;    
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  option {
+    background-color: ${({theme}) => theme.bgAside};
   }
 `;
 
@@ -73,7 +78,12 @@ export const SearchContainer = styled.div`
     }
   }
 
-  > button {
+  > 
+    a {
+      text-decoration: none;
+      color: ${({theme}) => theme.primary};
+
+    button {
     width: 86px;
     height: 3rem;
     border: none;
@@ -81,6 +91,8 @@ export const SearchContainer = styled.div`
     color: white;
     font-size: 1rem;
     font-weight: 600;
+
+    }
   }
 `;
 

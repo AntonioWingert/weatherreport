@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import Loader from '../components/Loader';
 import MainContent from '../components/MainContent';
 import SearchLocation from '../components/SearchLocation/SearchLocation';
 import Sidebar from '../components/Sidebar/Sidebar';
@@ -6,15 +8,20 @@ import { MainContainer } from '../styles/MainContainer';
 
 class Home extends Component {
   render() {
+    const {loading} = this.props;
     return (
       <MainContainer>
         <Sidebar>
-          <SearchLocation />
+        {loading ? <Loader /> : <SearchLocation />}
         </Sidebar>
-        <MainContent />
+        {loading ? <Loader /> : <MainContent />}
       </MainContainer>
     )
   }
 }
 
-export default Home;
+const mapStateToProps = (state) => ({
+  loading: state.datesApi.isLoading,
+});
+
+export default connect(mapStateToProps)(Home);
