@@ -4,7 +4,6 @@ import {AiOutlineSearch, AiOutlineClose} from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchDateCity } from '../../store/actions';
-import { type } from '@testing-library/user-event/dist/type';
 
 class SearchLocation extends Component {
   state = {

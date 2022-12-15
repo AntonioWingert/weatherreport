@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 class WeatherSideBar extends Component {
   render() {
-    const {error, dates, celsius} = this.props;
+    const {dates, celsius} = this.props;
     const date = dates.forecast.forecastday[0].date;
     const BRdate = date.split('-').reverse().join('/');
 
@@ -17,7 +17,7 @@ class WeatherSideBar extends Component {
           <button>
             <Link to="/search">Pesquise sua Cidade</Link>
           </button>
-          <button type='button' className='target-button'><BiTargetLock size={30}/></button>
+          <Link to="/search" className='target-button'><BiTargetLock size={30}/></Link>
         </ButtonContainer>
         <ImageContainer>
           <img src={dates.current.condition.icon} alt="imagem do tempo" />
@@ -39,7 +39,6 @@ class WeatherSideBar extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  error: state.datesApi.error,
   dates: state.datesApi.datesApi,
   celsius: state.datesApi.celsius,
 });

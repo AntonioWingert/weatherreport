@@ -35,6 +35,8 @@ export const ButtonContainer = styled.div`
   }
 
   .target-button {
+    background-color: ${({theme}) => theme.bgButton};
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
