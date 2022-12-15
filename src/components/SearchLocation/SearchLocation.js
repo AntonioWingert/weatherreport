@@ -4,6 +4,7 @@ import {AiOutlineSearch, AiOutlineClose} from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchDateCity } from '../../store/actions';
+import { type } from '@testing-library/user-event/dist/type';
 
 class SearchLocation extends Component {
   state = {
@@ -19,14 +20,25 @@ class SearchLocation extends Component {
   }
 
   handleClick = () => {
-    const {city, optionsCity} = this.state;
+    const {city} = this.state;
     const {dispatch} = this.props;
+       
     if(!city) {
-     dispatch(fetchDateCity(optionsCity));
-     return
+      alert('Insira uma cidade valida.');
+      return
+    }
+    if(parseInt(city)) {
+      alert('Insira uma cidade valida.');
+      return
     }
     dispatch(fetchDateCity(city));
-    return
+  }
+
+  handleClickOptions = () => {
+    const {optionsCity} = this.state;
+    const {dispatch} = this.props;
+       
+    dispatch(fetchDateCity(optionsCity));
   }
 
   handleClickStatikCitys = (city) => {
@@ -72,12 +84,18 @@ class SearchLocation extends Component {
           <option value="florianopolis">Florianópolis - SC</option>
           <option value="porto alegre">Porto Alegre - RS</option>
         </select>
+        <Link to='/' className='button-option'>
+          <button
+          onClick={this.handleClickOptions}
+          type='button'>
+            Selecionar Cidade
+          </button>
+        </Link>
         <Link to="/" onClick={() => this.handleClickStatikCitys('sao paulo')}>São Paulo - SP</Link>
         <Link to="/" onClick={() => this.handleClickStatikCitys('rio de janeiro')}>Rio de Janeiro - RJ</Link>
       </Container>
     )
   }
 }
-
 
 export default connect()(SearchLocation);

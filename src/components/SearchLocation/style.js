@@ -43,6 +43,22 @@ export const Container = styled.div`
   option {
     background-color: ${({theme}) => theme.bgAside};
   }
+
+  .button-option {
+    text-decoration: none;
+    color: ${({theme}) => theme.primary};
+    margin-top: -25px;
+
+    button {
+    width: 120px;
+    height: 3rem;
+    border: none;
+    background-color: ${({theme}) => theme.bgSearch};
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    }
+  }
 `;
 
 export const SearchContainer = styled.div`
