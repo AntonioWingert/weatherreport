@@ -9,7 +9,7 @@ export const Container = styled.div`
   align-items: center;
 
   @media screen and (max-width: 700px) {
-    max-height: 100vh;
+    height: 100vh;
     width: 100%;
   }
 `;

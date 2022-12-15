@@ -76,6 +76,25 @@ export const TemperatureContainer = styled.div`
     font-size: 36px;
     font-weight: 600;
   }
+
+  @media screen and (max-width: 700px) {
+
+    h1 {
+    font-size: 4.5rem;
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 1.5rem;
+    color: ${({theme}) => theme.secondary};
+  }
+
+  h2 {
+    color: ${({theme}) => theme.secondary};
+    font-size: 26px;
+    font-weight: 600;
+  }
+  }  
 `;
 
 export const DateContainer = styled.div`

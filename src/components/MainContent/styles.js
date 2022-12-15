@@ -33,6 +33,10 @@ export const CFContainer = styled.div`
   width: 80%;
   gap: 1rem;
   
+  @media screen and (max-width: 700px){
+    margin-bottom: 2rem;
+  }
+
   div {
     cursor: pointer;
     margin-top: 2rem;
@@ -80,7 +84,7 @@ export const ItemsHighlights = styled.div`
   }
 
   @media screen and (max-width: 700px) {
-    height: 100vh;
+    height: 120vh;
   }
 `;
 
