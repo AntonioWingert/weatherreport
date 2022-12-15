@@ -1,42 +1,50 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { setDegree } from '../../store/actions';
 import ForecastItem from '../ForecastItem/ForecastItem';
 import ForecastItemHighlights from '../ForecastItemHighlights/ForecastItemHightlights';
 import Loader from '../Loader';
 import { Container, CFContainer, ForecastContainer, ContainerLoader, ItemsHighlights, HihgligthsContainer, FooterContainer } from './styles';
 
 class MainContent extends Component {
+
   render() {
-    const {dates, loading} = this.props;
-    console.log(dates);
+    const {dates, loading, celsius} = this.props;
     if (loading) return (
       <ContainerLoader>
         <Loader />
       </ContainerLoader>  
     )
 
+    const handleClick = () => {
+      const {dispatch} = this.props;
+      dispatch(setDegree())
+    }
+
     return (
       <Container>
         <CFContainer>
-          <div>
+          <div onClick={!celsius ? handleClick : null} >
             ºC
           </div>
-          <div className='fahrenheit'>
+          <div className='fahrenheit' onClick={celsius ? handleClick : null}>
             ºF
           </div>
         </CFContainer>
         <ForecastContainer>
           <ForecastItem 
-          day={dates.forecast.forecastday[1].date}
+          day={dates.forecast.forecastday[1].date.split('-').reverse().join('/')}
           icon={dates.forecast.forecastday[1].day.condition.icon}
-          minTemp={dates.forecast.forecastday[1].day.mintemp_c}
-          maxTemp={dates.forecast.forecastday[1].day.maxtemp_c}
+          minTemp={celsius ? dates.forecast.forecastday[1].day.mintemp_c : dates.forecast.forecastday[1].day.mintemp_f}
+          maxTemp={celsius ? dates.forecast.forecastday[1].day.maxtemp_c : dates.forecast.forecastday[1].day.maxtemp_f}
+          degree={celsius ? 'ºC' : 'ºF'}
           />
           <ForecastItem 
-          day={dates.forecast.forecastday[2].date}
+          day={dates.forecast.forecastday[2].date.split('-').reverse().join('/')}
           icon={dates.forecast.forecastday[2].day.condition.icon}
-          minTemp={dates.forecast.forecastday[2].day.mintemp_c}
-          maxTemp={dates.forecast.forecastday[2].day.maxtemp_c}
+          minTemp={celsius ? dates.forecast.forecastday[2].day.mintemp_c : dates.forecast.forecastday[2].day.mintemp_f}
+          maxTemp={celsius ? dates.forecast.forecastday[2].day.maxtemp_c : dates.forecast.forecastday[2].day.maxtemp_f}
+          degree={celsius ? 'ºC' : 'ºF'}
           />
         </ForecastContainer>
         <ItemsHighlights>
@@ -75,6 +83,7 @@ class MainContent extends Component {
 const mapStateToProps = (state) => ({
   dates: state.datesApi.datesApi,
   loading: state.datesApi.isLoading,
+  celsius: state.datesApi.celsius,
 });
 
 export default connect(mapStateToProps)(MainContent);

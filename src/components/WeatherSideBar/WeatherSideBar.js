@@ -7,7 +7,9 @@ import { connect } from 'react-redux';
 
 class WeatherSideBar extends Component {
   render() {
-    const {error, dates} = this.props;
+    const {error, dates, celsius} = this.props;
+    const date = dates.forecast.forecastday[0].date;
+    const BRdate = date.split('-').reverse().join('/');
 
     return (
       <Container>
@@ -21,11 +23,11 @@ class WeatherSideBar extends Component {
           <img src={dates.current.condition.icon} alt="imagem do tempo" />
         </ImageContainer>
         <TemperatureContainer>
-          <h1>{Math.floor(+(dates.current.temp_c))}<span>ºC</span></h1>
+          <h1>{celsius ? Math.floor(+(dates.current.temp_c)) : Math.floor(+(dates.current.temp_f)) }<span>{celsius ? 'ºC' : 'ºF'}</span></h1>
           <h2>{dates.current.condition.text}</h2>
         </TemperatureContainer>
         <DateContainer>
-          <p>Today • {dates.forecast.forecastday[0].date}</p>
+          <p>Today • {BRdate}</p>
           <div>
             <MdLocationOn size={25}/>
             <p>{dates.location.name} - {dates.location.region}</p>
@@ -39,6 +41,7 @@ class WeatherSideBar extends Component {
 const mapStateToProps = (state) => ({
   error: state.datesApi.error,
   dates: state.datesApi.datesApi,
+  celsius: state.datesApi.celsius,
 });
 
 export default connect(mapStateToProps)(WeatherSideBar);

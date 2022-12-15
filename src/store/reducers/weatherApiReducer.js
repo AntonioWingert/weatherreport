@@ -1,9 +1,10 @@
-import { REQUEST_FAILED, REQUEST_STARTED, REQUEST_SUCCESSFUL } from "../actions";
+import { REQUEST_FAILED, REQUEST_STARTED, REQUEST_SUCCESSFUL, SET_DEGREE } from "../actions";
 
 const INITIAL_STATE = {
   datesApi: {},
   error: '',
   isLoading: true,
+  celsius: true,
 };
 
 export const weatherApiReducer = (state = INITIAL_STATE, action) => {
@@ -21,6 +22,10 @@ export const weatherApiReducer = (state = INITIAL_STATE, action) => {
       ...state,
       error: action.error,
       isLoading: false,
+    }
+    case SET_DEGREE: return {
+      ...state,
+      celsius: !state.celsius,
     }
     default: return state;
   }

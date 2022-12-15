@@ -3,6 +3,7 @@ import { getDatesApi } from "../../services/api";
 export const REQUEST_STARTED = 'REQUEST_STARTED';
 export const REQUEST_SUCCESSFUL = 'REQUEST_SUCCESSFUL';
 export const REQUEST_FAILED = 'REQUEST_FAILED';
+export const SET_DEGREE = 'SET_DEGREE'
 
 export const firstRequest = () => {
   return async (dispatch) => {
@@ -40,4 +41,8 @@ const requestSuccessful = (data) => ({
 const requestFailed = (error) => ({
   type: REQUEST_FAILED,
   error,
+});
+
+export const setDegree = () => ({
+  type: SET_DEGREE,
 });
