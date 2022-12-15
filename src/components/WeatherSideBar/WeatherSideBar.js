@@ -27,7 +27,7 @@ class WeatherSideBar extends Component {
           <h2>{dates.current.condition.text}</h2>
         </TemperatureContainer>
         <DateContainer>
-          <p>Today • {BRdate}</p>
+          <p>Hoje • {BRdate}</p>
           <div>
             <MdLocationOn size={25}/>
             <p>{dates.location.name} - {dates.location.region}</p>
