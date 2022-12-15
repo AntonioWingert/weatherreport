@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ForecastItem from '../ForecastItem/ForecastItem';
 import ForecastItemHighlights from '../ForecastItemHighlights/ForecastItemHightlights';
 import Loader from '../Loader';
-import { Container, CFContainer, ForecastContainer, ContainerLoader, ItemsHighlights, HihgligthsContainer } from './styles';
+import { Container, CFContainer, ForecastContainer, ContainerLoader, ItemsHighlights, HihgligthsContainer, FooterContainer } from './styles';
 
 class MainContent extends Component {
   render() {
@@ -64,9 +64,9 @@ class MainContent extends Component {
             />
           </HihgligthsContainer>
         </ItemsHighlights>
-        <footer>
+        <FooterContainer>
           <p>Created by <a href="https://github.com/antonioWingert" target="_blank" rel="noreferrer">Antonio Bruno Wingert</a> - devChallenges.io</p>
-        </footer>
+        </FooterContainer>
       </Container>
     )
   }

@@ -9,11 +9,9 @@ export const Container = styled.div`
   height: 100vh;
   color: ${({theme}) => theme.secondary};
 
-
-  a {
-    text-decoration: none;
-    color: ${({theme}) => theme.secondary};
-    font-weight: 700;
+  @media screen and (max-width: 700px) {
+    text-align: center;
+    height: 100vh;
   }
 `;
 
@@ -80,6 +78,10 @@ export const ItemsHighlights = styled.div`
     font-size: 24px;
     color: ${({theme}) => theme.primary};
   }
+
+  @media screen and (max-width: 700px) {
+    height: 100vh;
+  }
 `;
 
 export const HihgligthsContainer = styled.div`
@@ -89,4 +91,18 @@ export const HihgligthsContainer = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
+ 
+ 
+  @media screen and (max-width: 700px) {
+    gap: 1rem;
+  }
+`;
+
+export const FooterContainer = styled.footer`
+
+  a {
+      text-decoration: none;
+      color: ${({theme}) => theme.secondary};
+      font-weight: 700;
+    }
 `;

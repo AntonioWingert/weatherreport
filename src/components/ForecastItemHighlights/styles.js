@@ -27,8 +27,4 @@ export const Container = styled.div`
     font-size: 36px;
     font-weight: 400;
   }
-
-  @media screen and (max-width: 1400px){
-   width: 20rem;
-  }
 `;
