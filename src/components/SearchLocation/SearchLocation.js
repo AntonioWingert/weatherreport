@@ -22,7 +22,7 @@ class SearchLocation extends Component {
     const {city} = this.state;
     const {dispatch} = this.props;
        
-    if(!city) {
+    if(!city || city.length < 5) {
       alert('Insira uma cidade valida.');
       return
     }
