@@ -54,11 +54,13 @@ class MainContent extends Component {
               title="Velocidade do Vento"
               description={`${dates.current.wind_kph}`}
               medidas="Km/s"
+              windStatus = {`${dates.current.wind_dir}`}
             />
             <ForecastItemHighlights 
               title="Umidade"
               description={`${dates.current.humidity}`}
               medidas="%"
+              humidity={`${dates.current.humidity}`}
             />
             <ForecastItemHighlights 
               title="Visibilidade"

@@ -83,6 +83,10 @@ export const ItemsHighlights = styled.div`
     color: ${({theme}) => theme.primary};
   }
 
+  @media screen and (max-width: 1100px) {
+    height: 120vh;
+  }
+
   @media screen and (max-width: 700px) {
     height: 120vh;
   }

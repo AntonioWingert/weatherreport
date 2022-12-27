@@ -8,6 +8,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 1100px) {
+    height: 100vh;
+    width: 100%;
+  }
+
   @media screen and (max-width: 700px) {
     height: 100vh;
     width: 100%;
